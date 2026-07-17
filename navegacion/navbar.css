@@ -1,13 +1,16 @@
 :root{
     --color-principal:#264653;
     --color-secundario:#2a9d8f;
-    --color-hover:#38b2a3;
+    --color-hover:#4ba89d;
     --color-fondo:#edf6f9;
+    --color-fondo-oscuro:#ddebf0;
     --color-texto:#fff;
+    --color-parrafo:#444;
     --color-sombra:rgba(0,0,0,.25);
     --color-sombra-logo:rgba(42,157,143,.40);
     --color-boton:rgba(255,255,255,.10);
     --color-borde:rgba(255,255,255,.18);
+    --color-borde-tabla:#d8dee4;
     --radio:10px;
     --radio-logo:40%;
     --transicion:.35s;
@@ -23,37 +26,7 @@
 body{
     background:linear-gradient(135deg,#eef2f7,#d9e5ff);
     font-family:Arial, Helvetica, sans-serif;
-}
-
-main{
-    width:min(var(--ancho-contenido),95%);
-    margin:40px auto;
-    & .tema{
-        margin-bottom:60px;
-        padding:30px;
-        background:#fff;
-        border-radius:var(--radio);
-        box-shadow:0 5px 18px var(--color-sombra);
-        & h2{
-            margin-bottom:20px;
-            color:var(--color-principal);
-            border-left:8px solid var(--color-secundario);
-            padding-left:15px;
-        }
-        & .subnav{
-            display:flex;
-            flex-wrap:wrap;
-            gap:5px;
-            margin-bottom:30px;
-        }
-        & article{
-            margin-top:40px;
-            padding:25px;
-            border-radius:var(--radio);
-            background:var(--color-fondo);
-            border-left:6px solid var(--color-secundario);
-        }
-    }
+    min-height:100vh;
 }
 
 .navbar{
@@ -90,23 +63,157 @@ main{
         gap:10px;
         list-style:none;
         margin: 20px 0;
+    }
+}
 
-        & a{
-            display: block;
-            color:var(--color-texto);
-            text-decoration:none;
-            padding:10px 20px;
-            border-radius:var(--radio);
-            background:var(--color-boton);
-            border:1px solid var(--color-borde);
-            box-shadow:0 2px 6px var(--color-sombra);
-            transition:var(--transicion);
+main{
+    width:min(var(--ancho-contenido),95%);
+    margin:40px auto;
+    & .tema{
+        margin-bottom:60px;
+        padding:30px;
+        background:#fff;
+        border-radius:var(--radio);
+        box-shadow:0 5px 18px var(--color-sombra);
+        & h2{
+            margin-bottom:8px;
+            color:var(--color-principal);
+            border-left:8px solid var(--color-secundario);
+            padding-left:15px;
+        }
+        & h3{
+            margin-bottom:20px;
+            padding-bottom:10px;
+            color:var(--color-principal);
+            border-bottom:3px solid var(--color-secundario);
+            font-size:1.6rem;
+        }
 
-            &:hover{
-                background:var(--color-secundario);
-                transform:translateY(-4px);
-                box-shadow:0 5px 12px var(--color-sombra);
+        & h4{
+            margin:25px 0 12px;
+            color:var(--color-secundario);
+            font-size:1.2rem;
+        }
+        & p{
+            margin:15px 0;
+            line-height:1.7;
+            color:var(--color-parrafo);
+        }
+        & ul,
+        & ol{
+            margin:15px 0 15px 30px;
+            line-height:1.8;
+            & li{
+                margin-bottom:8px;
             }
+        }
+        & .tabla{
+            overflow-x:auto;
+            & table{
+                width:90%;
+                margin:20px auto;
+                border-collapse:collapse;
+                overflow:hidden;
+                border-radius:var(--radio);
+                box-shadow:0 3px 10px var(--color-sombra);
+
+                & thead{
+                    background:var(--color-principal);
+                    color:var(--color-texto);
+                }
+
+                & th,
+                & td{
+                    padding:14px 18px;
+                    text-align:left;
+                    border-bottom:1px solid var(--color-borde-tabla);
+                }
+
+                & th{
+                    font-weight:bold;
+                }
+
+                & td{
+                    color:var(--color-parrafo);
+                }
+
+                & tbody tr{
+                    transition:var(--transicion);
+
+                    &:nth-child(even){
+                        background:var(--color-fondo-oscuro);
+                    }
+
+                    &:hover{
+                        background:var(--color-hover);
+                        transform:scale(1.01);
+
+                        & td{
+                            color:var(--color-texto);
+                        }
+                    }
+                }
+            }
+        }
+
+
+        & .subnav{
+            display:flex;
+            flex-wrap:wrap;
+            gap:10px;
+            margin:15px 0 30px;
+            padding:15px;
+            background:var(--color-fondo);
+            border-left:5px solid var(--color-secundario);
+            border-radius:var(--radio);
+            & .boton{
+                    background:#fff;
+                    color:var(--color-secundario);
+                    font-weight: bold;
+                }
+            }
+        & article{
+
+            margin-top:40px;
+            padding:25px;
+            border-radius:var(--radio);
+            background:var(--color-fondo);
+            border-left:6px solid var(--color-secundario);
+            & aside{
+                margin:30px 0;
+                padding:20px 25px;
+                border-radius:var(--radio);
+                box-shadow:0 4px 12px var(--color-sombra);
+                position:relative;
+                overflow:hidden;
+
+                & h4{
+                    margin-top:0;
+                    margin-bottom:15px;
+                    font-size:1.2rem;
+                }
+
+                & p{
+                    color:var(--color-parrafo);
+                }
+
+                & ul{
+                    margin-left:25px;
+                }
+            }
+            & .explicacio h4::before{content:"📖 Explicació";}
+            & .arrel h4::before{content:"🔎 Arrel i terminació";}
+            & .tabla h4::before{content:"📋 Taula resum";}
+            & .metode h4::before{content:"🧭 Com saber-ho?";}
+            & .exemples h4::before{content:"💡 Exemples";}
+            & .errors h4::before{content:"⚠️ Errors freqüents";}
+            & .vocabulari h4::before{content:"📚 Vocabulari";}
+            & .lectura h4::before{content:"📖 Lectura";}
+            & .nota h4::before{content:"💡 Nota";}
+            & .recorda h4::before{content:"📌 Recorda";}
+            & .curiositat h4::before{content:"💬 Curiositat";}
+            & .resum h4::before{content:"✅ Mini resum";}
+            & .exercicis h4::before{content:"📝 Exercicis";}
         }
     }
 }
@@ -143,6 +250,7 @@ main{
     background:var(--color-boton);
     border:1px solid var(--color-borde);
     border-radius:var(--radio);
+    box-shadow:0 2px 6px var(--color-sombra);
     transition:var(--transicion);
 
     &:hover{
