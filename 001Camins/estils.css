@@ -1,0 +1,445 @@
+/* =========================================================
+   Estils comuns de Camins de Catalunya
+   ========================================================= */
+
+/* :root representa l'element arrel <html>. Les variables declarades aquí
+   queden disponibles a tot el document. */
+:root {
+    /* Els noms que comencen per -- són propietats personalitzades (variables CSS).
+       Després es recuperen amb var(--nom), evitant repetir valors. */
+    --verd-fosc: #234b36;
+    --verd: #3f7652;
+    --verd-clar: #e8f1e9;
+    --terra: #b86f3d;
+    --crema: #f7f4ec;
+    --blanc: #ffffff;
+    --text: #26322b;
+    --text-suau: #5c685f;
+    --vora: #d5ddd6;
+    /* La barra dins rgb() indica l'opacitat: aquí el color només té un 12%. */
+    --ombra: 0 4px 16px rgb(35 75 54 / 12%);
+    --radi: 12px;
+}
+
+/* * és el selector universal: selecciona tots els elements.
+   border-box fa que el padding i la vora quedin inclosos dins l'amplada. */
+* {
+    box-sizing: border-box;
+}
+
+/* Aquesta és la referència de les unitats rem: 1rem equival a 16px. */
+html{
+    font-size:16px;
+}
+body {
+    /* Limita l'amplada en pantalles grans; els marges auto centren el body. */
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1.25rem;
+    background: var(--crema);
+    color: var(--text);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    /* Sense unitat: l'interlineat serà 1,6 vegades la mida de cada text. */
+    line-height: 1.6;
+}
+
+/* Títols */
+h1,
+h2,
+h3 {
+    /* Separar selectors amb comes permet aplicar les mateixes regles a tots. */
+    color: var(--verd-fosc);
+    line-height: 1.2;
+}
+
+h1 {
+    margin: 0;
+    font-size: 3rem;
+}
+
+h2 {
+    margin-top: 0;
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.25rem;
+}
+
+/* Enllaços */
+a {
+    color: var(--verd);
+}
+
+/* :hover s'activa amb el punter; :focus-visible, quan normalment s'hi arriba
+   amb el teclat. Agrupar-los ofereix resposta a ratolí i teclat. */
+a:hover,
+a:focus-visible {
+    color: var(--terra);
+}
+
+/* Capçalera i navegació */
+header,
+h1,
+nav {
+    text-align: center;
+}
+
+header,
+h1 {
+    margin-top: 1.25rem;
+}
+
+header {
+    padding: 2rem 1rem 1.25rem;
+    background: var(--verd-clar);
+    border-radius: var(--radi);
+}
+
+nav {
+    /* Flex col·loca els enllaços en fila; wrap els passa a una altra línia
+       si no caben. Gap els separa sense afegir marges a cada enllaç. */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.4rem 0.75rem;
+    margin: 1rem 0;
+}
+
+nav a {
+    padding: 0.45rem 0.75rem;
+    /* Un radi molt gran crea la forma de càpsula. */
+    border-radius: 999px;
+    color: var(--verd-fosc);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+nav a:hover,
+nav a:focus-visible {
+    background: var(--verd-fosc);
+    color: var(--blanc);
+}
+
+/* Contingut principal */
+main,
+section,
+aside {
+    margin: 1.5rem 0;
+}
+
+section,
+article,
+aside,
+details,
+form {
+    margin-bottom: 1.25rem;
+    padding: 1.25rem;
+    background: var(--blanc);
+    border: 1px solid var(--vora);
+    border-radius: var(--radi);
+    box-shadow: 0 16px 18px rgb(28 28 28 / 15%);
+}
+
+article {
+    box-shadow: none;
+}
+
+.ruta-destacada,
+aside {
+    border-left: 5px solid var(--terra);
+}
+
+hr {
+    margin: 1.5rem 0;
+    border: 0;
+    border-top: 1px solid var(--vora);
+}
+
+/* Elements multimèdia */
+img,
+iframe {
+    /* Com a blocs es poden centrar amb marges automàtics; max-width evita
+       que sobresurtin en pantalles més estretes. */
+    display: block;
+    max-width: 100%;
+    margin: 1rem auto;
+    border: 0;
+    border-radius: var(--radi);
+}
+
+img {
+    /* Manté la proporció original quan max-width redueix l'amplada. */
+    height: auto;
+    box-shadow: var(--ombra);
+}
+
+figure {
+    margin: 1.5rem 0;
+    text-align: center;
+}
+
+figcaption {
+    color: var(--text-suau);
+    font-size: 0.9rem;
+}
+
+/* ::marker permet modificar només la vinyeta o el número d'una llista. */
+li::marker {
+    color: var(--terra);
+}
+
+blockquote {
+    margin: 1.5rem 0;
+    padding: 1rem 1.25rem;
+    background: var(--verd-clar);
+    border-left: 5px solid var(--verd);
+    font-size: 1.1rem;
+    font-style: italic;
+}
+
+summary {
+    /* summary és la part visible i clicable de l'element desplegable details. */
+    color: var(--verd-fosc);
+    font-weight: 700;
+    /* Indica visualment que el resum del details es pot clicar. */
+    cursor: pointer;
+}
+
+dt {
+    color: var(--verd-fosc);
+    font-weight: 700;
+}
+
+dd {
+    margin-bottom: 0.75rem;
+}
+
+/* Taules */
+table {
+    width: 100%;
+    margin: 1rem 0;
+    /* Fusiona les vores de cel·les contigües en una única línia. */
+    border-collapse: collapse;
+    background: var(--blanc);
+    border: 0;
+    box-shadow: var(--ombra);
+}
+
+th,
+td {
+    padding: 0.8rem;
+    border: 1px solid var(--vora);
+    text-align: left;
+}
+
+th {
+    background: var(--verd-fosc);
+    color: var(--blanc);
+}
+
+/* :nth-child(even) selecciona les files parelles i crea l'efecte zebra. */
+tr:nth-child(even) {
+    background: var(--verd-clar);
+}
+
+/* Formularis */
+label {
+    font-weight: 700;
+}
+
+/* :not() exclou el checkbox perquè no ocupi tota l'amplada. */
+input:not([type="checkbox"]),
+select,
+textarea {
+    width: 100%;
+    margin-top: 0.25rem;
+    padding: 0.7rem;
+    border: 1px solid #aebbb1;
+    border-radius: 7px;
+    background: var(--blanc);
+    color: var(--text);
+}
+
+textarea {
+    min-height: 8rem;
+    /* L'usuari pot canviar-ne l'alçada, però no l'amplada. */
+    resize: vertical;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    /* :focus identifica el control que està rebent l'entrada de l'usuari. */
+    border-color: var(--verd);
+    /* L'outline ressalta el camp actiu sense alterar-ne les dimensions. */
+    outline: 3px solid rgb(63 118 82 / 20%);
+}
+
+button {
+    padding: 0.7rem 1.1rem;
+    border: 0;
+    border-radius: 7px;
+    background: var(--verd-fosc);
+    color: var(--blanc);
+    /* Fa que el botó hereti la tipografia del seu element pare. */
+    font: inherit;
+    font-weight: 700;
+    /* Mostra la mà per deixar clar que és un element interactiu. */
+    cursor: pointer;
+}
+
+button:hover,
+button:focus-visible {
+    background: var(--terra);
+}
+
+button[type="reset"] {
+    /* Selector d'atribut: només afecta el botó que té type="reset". */
+    background: var(--text-suau);
+}
+
+/* Peu de pàgina compartit */
+.peu-web {
+    /* relative crea la referència per posicionar el ::after absolut. */
+    position: relative;
+    /* Retalla la part del cercle decoratiu que surt del footer. */
+    overflow: hidden;
+    margin: 3rem 0 1rem;
+    padding: 0;
+    border-radius: var(--radi);
+    /* 135deg indica la direcció diagonal; el 60% fixa on arriba el color central. */
+    background: var(--verd-fosc);
+    color: var(--blanc);
+    text-align: left;
+}
+
+.peu-contingut {
+    display: grid;
+    grid-template-columns: minmax(280px, 1fr) auto;
+    gap: 1rem;
+    align-items: center;
+    padding: 2rem;
+    background: var(--verd-clar);
+}
+
+.peu-identitat {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+/* La mosca és decorativa perquè el nom ja apareix escrit al costat. */
+.logo-peu {
+    flex: 0 0 auto;
+    width: 68px;
+    height: 68px;
+    margin: 0;
+    border-radius: 0;
+    box-shadow: none;
+    object-fit: contain;
+}
+
+.peu-titol {
+    margin: 0 0 0.15rem;
+    color: var(--verd-fosc);
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.peu-eslogan {
+    margin: 0;
+    color: var(--text-suau);
+}
+
+.peu-navegacio {
+    justify-content: flex-end;
+    margin: 0;
+}
+
+.peu-web .peu-navegacio a {
+    /* Selector descendent: només afecta els <a> que són dins d'aquests
+       dos contenidors, sense modificar els enllaços de la resta del web. */
+    background: rgb(35 75 54 / 8%);
+    color: var(--verd-fosc);
+    font-size: 0.9rem;
+}
+
+.peu-web .peu-navegacio a:hover,
+.peu-web .peu-navegacio a:focus-visible {
+    background: var(--terra);
+    color: var(--blanc);
+}
+
+.peu-final {
+    display: flex;
+    /* Col·loca el copyright a un extrem i l'enllaç a l'altre. */
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1rem 2rem;
+    background: rgb(0 0 0 / 12%);
+}
+
+.peu-final p {
+    margin: 0;
+}
+
+.tornar-amunt {
+    color: var(--blanc);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.tornar-amunt:hover,
+.tornar-amunt:focus-visible {
+    color: #f2bd96;
+}
+
+/* @media crea una consulta de mitjà. Aquest bloc substitueix o afegeix regles
+   només quan l'amplada visible de la pantalla és de 600px o menys. */
+@media (max-width: 600px) {
+    body {
+        padding: 0 0.75rem;
+    }
+
+    header,
+    section,
+    article,
+    aside,
+    details,
+    form {
+        padding: 1rem;
+    }
+
+    nav {
+        /* En mòbil, els enllaços passen de fila horitzontal a columna. */
+        flex-direction: column;
+    }
+
+    .peu-contingut {
+        /* La graella de dues columnes passa a tenir-ne una en mòbil. */
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+        padding: 1.5rem;
+    }
+
+    .peu-navegacio {
+        align-items: flex-start;
+    }
+
+    .peu-final {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 1rem 1.5rem;
+    }
+
+    nav a {
+        background: rgb(255 255 255 / 65%);
+    }
+
+    button {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+}

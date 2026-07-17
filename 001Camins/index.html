@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+
+<html lang="ca">
+<!-- Indico que el contingut principal de la pàgina està en català. -->
+
+<head>
+    <meta charset="UTF-8">
+    <!-- Permeto que es mostrin correctament accents, símbols i caràcters especials. -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Faig que la pàgina s'adapti millor a mòbils i tauletes. -->
+
+    <title>Camins de Catalunya | Inici</title>
+    <link rel="stylesheet" href="estils.css?v=3">
+
+    <!-- Estil embegut: només s'aplica al subtítol de la pàgina d'inici. -->
+    <style>
+        .subtitol-portada {
+            display: inline-block;
+            margin: 1rem 0;
+            padding: 0.65rem 1.25rem;
+            border-left: 5px solid var(--terra);
+            border-radius: 6px;
+            background-color: var(--blanc);
+            color: var(--verd-fosc);
+            font-size: 1.15rem;
+            font-style: italic;
+            box-shadow: var(--ombra);
+        }
+    </style>
+</head>
+
+<body>
+<!-- Aquí començo tot el contingut visible de la pàgina. -->
+
+<header class="capcalera">
+    <!-- Creo la capçalera principal del lloc web. -->
+
+    <h1 class="logo-web">
+        <img class="logo-capcalera" src="logo-camins-catalunya.png" alt="Camins de Catalunya">
+    </h1>
+
+    <nav class="menu-principal">
+        <a href="index.html">Inici</a> |
+        <a href="rutes.html">Rutes</a> |
+        <a href="equipament.html">Equipament</a> |
+        <a href="consells.html">Consells</a> |
+        <a href="contacte.html">Contacte</a>
+    </nav>
+
+    <p class="subtitol-portada"><strong>Petjades, paisatges i aventures per recordar</strong></p>
+</header>
+
+<main class="contingut-principal">
+    <!-- Aquí col·loco el contingut principal i únic d'aquesta pàgina. -->
+    <hr>
+    <section>
+        <!-- Agrupo el contingut de benvinguda dins d'una secció temàtica. -->
+        <h2>Benvinguts</h2>
+        <p>
+            Camins de Catalunya és un lloc web dedicat a les persones que volen
+            descobrir el territori català caminant.
+        </p>
+
+        <img
+            src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=900&q=80"
+            alt="Paisatge de muntanya"
+            width="700"
+        >
+        <!-- Afegeixo un text alternatiu perquè la imatge sigui accessible. -->
+
+        <h3>Què hi trobaràs?</h3>
+
+        <ul>
+            <li>Propostes de rutes de diferents dificultats.</li>
+            <li>Recomanacions d'equipament.</li>
+            <li>Consells de seguretat i planificació.</li>
+            <li>Informació per contactar amb nosaltres.</li>
+        </ul>
+    </section>
+
+    <section class="ruta-destacada">
+        <!-- Creo una nova secció dedicada a la ruta destacada. -->
+
+        <h2>Ruta destacada</h2>
+
+        <article>
+            <!-- Utilitzo un article perquè aquesta ruta té sentit com a contingut independent. -->
+
+            <h3>Montserrat</h3>
+
+            <p>
+                Una muntanya mística i emblemàtica de Catalunya.
+            </p>
+
+            <p>
+                <a href="rutes.html">Consulta totes les rutes</a>
+            </p>
+        </article>
+    </section>
+</main>
+
+<hr>
+
+<footer class="peu-web">
+    <div class="peu-contingut">
+        <div class="peu-identitat">
+            <img class="logo-peu" src="mosca-camins-catalunya.png" alt="">
+            <div>
+                <p class="peu-titol">Camins de Catalunya</p>
+                <p class="peu-eslogan">Petjades, paisatges i aventures per recordar.</p>
+            </div>
+        </div>
+        <nav class="peu-navegacio" aria-label="Navegació del peu de pàgina">
+            <a href="rutes.html">Rutes</a>
+            <a href="consells.html">Consells</a>
+            <a href="equipament.html">Equipament</a>
+            <a href="contacte.html">Contacte</a>
+        </nav>
+    </div>
+    <div class="peu-final">
+        <p>&copy; 2026 Camins de Catalunya. Tots els drets reservats.</p>
+        <a class="tornar-amunt" href="#">↑ Tornar a dalt</a>
+    </div>
+</footer>
+
+</body>
+</html>

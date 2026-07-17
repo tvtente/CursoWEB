@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Pedido</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="imagenes/favicon.png" type="image/x-icon">
+</head>
+
+<body>
+
+    <section class="form-register">
+
+        <h4>Formulario de Pedido</h4>
+
+        <form>
+
+            <input class="controls" type="text" name="cliente" placeholder="Ingrese el nombre del cliente" required>
+
+            <input class="controls" type="text" name="articulo" placeholder="Ingrese el artículo" required>
+
+            <div class="fechas">
+
+                <div class="grupo">
+                    <label for="fechaPedido">Fecha del pedido</label>
+                    <input class="controls" type="date" id="fechaPedido" name="fechaPedido" required>
+                </div>
+
+                <div class="grupo">
+                    <label for="fechaEntrega">Fecha de entrega</label>
+                    <input class="controls" type="date" id="fechaEntrega" name="fechaEntrega" required>
+                </div>
+
+            </div>
+
+            <label for="pais">País</label>
+            <select class="controls" id="pais" name="pais" required>
+                <option value="">Seleccione un país...</option>
+                <option value="España">España</option>
+                <option value="Francia">Francia</option>
+                <option value="Portugal">Portugal</option>
+            </select>
+
+            <label for="ciudad">Ciudad</label>
+            <select class="controls" id="ciudad" name="ciudad" required>
+
+                <option value="">Seleccione una ciudad...</option>
+
+                <optgroup label="España">
+                    <option>Madrid</option>
+                    <option>Barcelona</option>
+                </optgroup>
+
+                <optgroup label="Francia">
+                    <option>París</option>
+                    <option>Lyon</option>
+                </optgroup>
+
+                <optgroup label="Portugal">
+                    <option>Lisboa</option>
+                    <option>Oporto</option>
+                </optgroup>
+
+            </select>
+
+            <input class="controls" type="number" name="cantidad" min="1" placeholder="Cantidad" required>
+
+            <label for="descuento">Descuento (%)</label>
+
+            <input class="controls" type="range" id="descuento" name="descuento" min="0" max="100" step="1" value="0"
+                list="marcas">
+
+            <datalist id="marcas">
+                <option value="0" label="0%"></option>
+                <option value="25" label="25%"></option>
+                <option value="50" label="50%"></option>
+                <option value="75" label="75%"></option>
+                <option value="100" label="100%"></option>
+            </datalist>
+
+            <div class="rango">
+                <span>0%</span>
+                <span>25%</span>
+                <span>50%</span>
+                <span>75%</span>
+                <span>100%</span>
+            </div>
+
+            <input class="controls" type="number" name="iva" min="0" max="100" step="0.01" placeholder="IVA (%)"
+                required>
+
+            <input class="controls" type="number" name="precio" min="1" step="1" placeholder="Precio unitario (€)"
+                required>
+
+            <div class="terminos">
+
+                <input type="checkbox" id="terminos" required>
+
+                <label for="terminos">
+                    Estoy de acuerdo con los <a href="#">Términos y Condiciones</a>
+                </label>
+
+            </div>
+
+            <input class="buttons" type="submit" value="Registrar Pedido">
+
+            <p>
+                <a href="#">¿Habla con nuestros profesionales?</a>
+            </p>
+
+        </form>
+
+    </section>
+
+</body>
+
+</html>

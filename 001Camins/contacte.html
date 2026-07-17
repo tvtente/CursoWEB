@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<!-- Indica que el documento utiliza HTML5 -->
+
+<html lang="es">
+<!-- Elemento raíz del documento -->
+
+<head>
+
+    <!-- Codificación de caracteres -->
+    <meta charset="UTF-8">
+
+    <!-- Adaptación a dispositivos móviles -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Título de la pestaña -->
+    <title>Camins de Catalunya | Contacte</title>
+    <link rel="stylesheet" href="estils.css?v=3">
+    <link rel="stylesheet" href="contacte.css">
+</head>
+
+<body>
+
+    <!-- HEADER: Cabecera principal de la página -->
+    <header>
+
+        <h1 class="logo-web">
+            <img class="logo-capcalera" src="logo-camins-catalunya.png" alt="Camins de Catalunya">
+        </h1>
+
+        <!-- NAV: Menú de navegación -->
+        <nav class="menu-principal">
+            <a href="index.html">Inici</a> |
+            <a href="rutes.html">Rutes</a> |
+            <a href="equipament.html">Equipament</a> |
+            <a href="consells.html">Consells</a> |
+            <a href="contacte.html">Contacte</a>
+        </nav>
+
+
+    </header>
+
+    <hr>
+
+    <!-- MAIN: Contenido principal de la página -->
+    <main>
+
+        <h2>Contacta amb nosaltres</h2>
+
+        <!-- Contenidor de dues columnes -->
+        <div class="contacte-columnes">
+
+            <!-- Dades de contacte -->
+            <section class="contacte-caixa">
+
+                <h3>Dades de contacte</h3>
+
+                <address>
+                    Camins de Catalunya<br>
+                    Plaça de Catalunya, Barcelona<br>
+
+                    Telèfon:
+                    <a href="tel:+34930000000">93 000 00 00</a><br>
+
+                    Correu:
+                    <a href="mailto:info@caminsdecatalunya.cat">
+                        info@caminsdecatalunya.cat
+                    </a>
+                </address>
+
+            </section>
+
+            <!-- Informació -->
+            <article class="contacte-caixa">
+
+                <h3>Per què contactar amb nosaltres?</h3>
+
+                <p>
+                    Oferim <strong>informació actualitzada</strong> sobre les rutes de senderisme.
+                </p>
+
+                <p>
+                    Les nostres guies estan
+                    <mark>revisades periòdicament</mark>
+                    perquè puguis gaudir de la natura amb seguretat.
+                </p>
+
+            </article>
+
+        </div>
+
+        <hr>
+
+        <!-- BLOCKQUOTE: Cita larga -->
+        <blockquote>
+
+            "La natura no és un lloc per visitar, és casa nostra."
+
+        </blockquote>
+
+        <p>
+            Com deia
+            <cite>Gary Snyder</cite>.
+        </p>
+
+        <hr>
+
+        <!-- DETAILS: Información desplegable -->
+        <details>
+
+            <!-- SUMMARY: Título del desplegable -->
+            <summary>Preguntes freqüents</summary>
+
+            <p>
+                Les rutes són gratuïtes i es poden consultar durant tot l'any.
+            </p>
+
+        </details>
+
+        <hr>
+
+        <!-- DL: Lista de definiciones -->
+        <h3>Glossari</h3>
+
+        <dl>
+
+            <dt>Senderisme</dt>
+            <dd>Activitat de caminar per camins i rutes naturals.</dd>
+
+            <dt>Ruta</dt>
+            <dd>Recorregut recomanat per visitar un espai natural.</dd>
+
+        </dl>
+
+        <hr>
+
+        <!-- FIGURE: Agrupa una imagen con su descripción -->
+        <figure>
+
+            <img src="https://tse1.mm.bing.net/th/id/OIP.AqUMmW2wCnzdLyUHyN5Y6QHaE8?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+                alt="Ruta de muntanya" width="350">
+
+            <!-- FIGCAPTION: Describe la imagen -->
+            <figcaption>
+                Ruta de senderisme pels Pirineus.
+            </figcaption>
+
+        </figure>
+
+        <hr>
+
+        <!-- ASIDE: Información complementaria -->
+        <aside>
+
+            <h3>Consell</h3>
+
+            <p>
+                Porta sempre aigua, calçat adequat i consulta la previsió meteorològica abans de sortir.
+            </p>
+
+        </aside>
+
+        <hr>
+
+        <!-- TABLE: Organiza información en filas y columnas -->
+        <h3>Horari d'atenció</h3>
+
+        <table border="1">
+
+            <tr>
+                <th>Dia</th>
+                <th>Horari</th>
+            </tr>
+
+            <tr>
+                <td>Dilluns - Divendres</td>
+                <td>09:00 - 18:00</td>
+            </tr>
+
+            <tr>
+                <td>Dissabte</td>
+                <td>09:00 - 13:00</td>
+            </tr>
+
+        </table>
+
+        <hr>
+
+        <!-- FORM: Permite introducir datos -->
+        <section>
+
+            <h3>Formulari de contacte</h3>
+
+            <form action="#" method="post">
+
+                <!-- LABEL: Describe el campo -->
+                <label for="nom">Nom:</label><br>
+                <input type="text" id="nom" name="nom"><br><br>
+
+                <label for="email">Correu electrònic:</label><br>
+                <input type="email" id="email" name="email"><br><br>
+
+                <label for="motiu">Motiu:</label><br>
+
+                <!-- SELECT: Lista desplegable -->
+                <select id="motiu" name="motiu">
+                    <option>Informació</option>
+                    <option>Reserva</option>
+                    <option>Altres</option>
+                </select>
+
+                <br><br>
+
+                <!-- TEXTAREA: Texto de varias líneas -->
+                <label for="missatge">Missatge:</label><br>
+                <textarea id="missatge" name="missatge" rows="5" cols="40"></textarea>
+
+                <br><br>
+
+                <!-- CHECKBOX: Casilla de verificación -->
+                <input type="checkbox" id="accepto">
+                <label for="accepto">Accepto la política de privacitat.</label>
+
+                <br><br>
+
+                <!-- BUTTON: Botones del formulario -->
+                <button type="submit">Enviar</button>
+                <button type="reset">Esborrar</button>
+
+            </form>
+
+        </section>
+
+        <hr>
+
+        <!-- IFRAME: Inserta otra página dentro de la actual -->
+        <section>
+
+            <h3>Mapa</h3>
+
+            <iframe src="https://www.google.com/maps?q=Plaça%20de%20Catalunya%20Barcelona&output=embed" width="600"
+                height="350" title="Mapa">
+            </iframe>
+
+        </section>
+
+    </main>
+
+    <hr>
+
+    <!-- FOOTER: Pie de página -->
+    <footer class="peu-web">
+        <div class="peu-contingut">
+            <div class="peu-identitat">
+                <img class="logo-peu" src="mosca-camins-catalunya.png" alt="">
+                <div>
+                    <p class="peu-titol">Camins de Catalunya</p>
+                    <p class="peu-eslogan">Petjades, paisatges i aventures per recordar.</p>
+                </div>
+            </div>
+            <nav class="peu-navegacio" aria-label="Navegació del peu de pàgina">
+                <a href="rutes.html">Rutes</a>
+                <a href="consells.html">Consells</a>
+                <a href="equipament.html">Equipament</a>
+                <a href="contacte.html">Contacte</a>
+            </nav>
+        </div>
+        <div class="peu-final">
+            <p>&copy; 2026 Camins de Catalunya. Tots els drets reservats.</p>
+            <a class="tornar-amunt" href="#">↑ Tornar a dalt</a>
+        </div>
+    </footer>
+</body>
+
+</html>

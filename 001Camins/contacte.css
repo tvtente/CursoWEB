@@ -1,0 +1,250 @@
+/* =========================================================
+   Estils exclusius de contacte.html
+   ========================================================= */
+
+/* =========================================================
+   Selector fill directe (>)
+   Només selecciona l'H2 que és fill directe de <main>.
+   No afectarà als H2 que estiguin dins de sections o articles.
+   ========================================================= */
+main > h2{
+    text-align:center;
+    margin-bottom:2rem;
+    letter-spacing:2px;
+}
+
+/* =========================================================
+   Formulari
+   margin:auto centra el formulari horitzontalment.
+   transition permet animar els canvis de propietats.
+   ========================================================= */
+form{
+    max-width:700px;
+    margin:auto;
+    transition:0.4s;
+}
+
+/* =========================================================
+   :hover s'activa quan el ratolí passa per sobre.
+   translateY mou lleugerament l'element cap amunt.
+   ========================================================= */
+form:hover{
+    transform:translateY(-5px);
+}
+
+/* =========================================================
+   Etiquetes
+   display:block fa que cada label ocupi tota la línia.
+   ========================================================= */
+label{
+    margin-top:1rem;
+    margin-bottom:.3rem;
+    font-weight:bold;
+}
+
+/* =========================================================
+   :not()
+   Selecciona tots els inputs EXCEPTE els checkbox.
+   ========================================================= */
+input:not([type="checkbox"]),
+select,
+textarea{
+    width:100%;
+    transition:.3s;
+}
+
+/* =========================================================
+   :focus
+   Quan l'usuari escriu en un camp.
+   outline és el contorn que mostra el navegador.
+   ========================================================= */
+input:focus,
+select:focus,
+textarea:focus{
+    outline:3px solid rgba(63,118,82,.25);
+    transform:scale(1.02);
+}
+
+/* =========================================================
+   Textarea
+   resize:vertical només permet canviar l'alçada.
+   ========================================================= */
+textarea{
+    min-height:140px;
+    resize:vertical;
+}
+
+/* Checkbox */
+input[type="checkbox"]{
+    margin-right:.5rem;
+}
+
+/* =========================================================
+   Botons
+   cursor:pointer canvia el cursor per una mà.
+   transition anima els canvis.
+   ========================================================= */
+button{
+    min-width:120px;
+    margin-top:1rem;
+    margin-right:.5rem;
+    cursor:pointer;
+    transition:.3s;
+}
+
+/* =========================================================
+   :hover
+   Quan el ratolí passa sobre el botó.
+   transform:scale augmenta lleugerament la mida.
+   ========================================================= */
+button:hover{
+    transform:scale(1.05);
+}
+
+/* =========================================================
+   :active
+   Només mentre el botó està sent premut.
+   ========================================================= */
+button:active{
+    transform:scale(.95);
+}
+
+/* =========================================================
+   Mapa
+   transition anima el canvi de mida.
+   ========================================================= */
+iframe{
+    width:100%;
+    min-height:350px;
+    transition:.4s;
+}
+
+/* =========================================================
+   En passar el ratolí, el mapa augmenta lleugerament.
+   ========================================================= */
+iframe:hover{
+    transform:scale(1.02);
+}
+
+/* Informació de contacte */
+address{
+    font-style:normal;
+    line-height:1.8;
+}
+
+/* =========================================================
+   :hover també funciona sobre qualsevol element.
+   ========================================================= */
+address:hover{
+    transform:translateX(8px);
+    transition:.3s;
+}
+
+/* Cita */
+blockquote{
+    font-size:1.15rem;
+    transition:.4s;
+}
+
+/* =========================================================
+   Efecte de ressaltat.
+   ========================================================= */
+blockquote:hover{
+    transform:scale(1.02);
+}
+
+/* Glossari */
+dl{
+    margin-top:1rem;
+}
+
+dt{
+    margin-top:.75rem;
+    transition:.3s;
+}
+
+/* =========================================================
+   Els termes del glossari canvien de mida.
+   ========================================================= */
+dt:hover{
+    transform:translateX(10px);
+}
+
+dd{
+    margin-left:1.5rem;
+}
+
+/* Figura */
+figure{
+    max-width:450px;
+    margin:2rem auto;
+    transition:.4s;
+}
+
+/* =========================================================
+   rotate()
+   Gira lleugerament la imatge.
+   ========================================================= */
+figure:hover{
+    transform:rotate(-1deg) scale(1.03);
+}
+
+/* =========================================================
+   Selector de pseudo-element (::first-letter)
+   Només modifica la primera lletra del blockquote.
+   ========================================================= */
+blockquote::first-letter{
+    font-size:2rem;
+    font-weight:bold;
+}
+
+/* =========================================================
+   ::selection
+   Modifica el color quan l'usuari selecciona text.
+   ========================================================= */
+::selection{
+    background:#3f7652;
+    color:white;
+}
+
+/* Contenidor que col·loca els blocs en dues columnes */
+/*=========================================================
+  Dues columnes a la part superior
+=========================================================*/
+
+.contacte-columnes{
+    display:flex;
+    gap:1.5rem;
+    align-items:stretch;
+}
+
+.contacte-columnes > section,
+.contacte-columnes > article{
+    flex:1;
+    margin:0;
+    display:flex;
+    flex-direction:column;
+}
+
+/* Les dues caixes ocupen el mateix espai */
+.contacte-caixa{
+    flex:1;
+}
+
+/* L'article ha de tenir el mateix estil que una secció */
+article.contacte-caixa{
+    background: var(--blanc);
+    border:1px solid var(--vora);
+    border-radius:var(--radi);
+    box-shadow:var(--ombra);
+    padding:1.25rem;
+}
+
+/* En mòbils passen una sota l'altra */
+@media (max-width:700px){
+
+    .contacte-columnes{
+        flex-direction:column;
+    }
+
+}

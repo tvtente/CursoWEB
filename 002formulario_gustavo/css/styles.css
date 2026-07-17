@@ -1,0 +1,182 @@
+/*==============================
+VARIABLES DEL TEMA
+==============================*/
+:root{
+    --color-formulario:#24303c;
+    --color-principal:#1f53c5;
+    --color-principal-hover:#17439e;
+}
+
+/* Reinicia los estilos del navegador */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+/* Fondo de la página */
+body{
+    background-image:url("../imagenes/fondo.png");
+    background-size:cover;
+    background-repeat:no-repeat;
+    background-position:center;
+    font-family:Calibri,sans-serif;
+}
+
+/* Contenedor principal del formulario */
+.form-register{
+    width:450px;
+    background:var(--color-formulario);
+    padding:30px;
+    margin:auto;
+    margin-top:100px;
+    border-radius:4px;
+    font-family:Calibri,sans-serif;
+    color:white;
+    box-shadow:7px 13px 37px #000;
+    transition:.35s;
+}
+
+/* Animación del formulario */
+.form-register:hover{
+    transform:translateY(-5px);
+    box-shadow:10px 18px 45px rgba(0,0,0,.55);
+}
+
+/* Título del formulario */
+.form-register h4{
+    font-size:24px;
+    margin-bottom:20px;
+    text-align:center;
+    transition:.35s;
+}
+
+/* Animación del título */
+.form-register:hover h4{
+    letter-spacing:1px;
+}
+
+/* Párrafos del formulario */
+.form-register p{
+    height:40px;
+    text-align:center;
+    font-size:18px;
+    line-height:40px;
+}
+
+/* Etiquetas */
+.form-register label{
+    display:block;
+    margin-bottom:6px;
+    margin-top:8px;
+    font-size:15px;
+}
+
+/* Enlaces */
+.form-register a{
+    color:white;
+    text-decoration:none;
+    transition:.3s;
+}
+
+/* Animación del enlace */
+.form-register a:hover{
+    color:#9fc4ff;
+    text-decoration:underline;
+}
+
+/* Botón */
+.form-register .buttons{
+    width:100%;
+    background:var(--color-principal);
+    border:none;
+    padding:12px;
+    color:white;
+    margin:16px 0;
+    font-size:17px;
+    cursor:pointer;
+    border-radius:4px;
+    transition:.3s;
+}
+
+/* Animación del botón */
+.form-register .buttons:hover{
+    background:var(--color-principal-hover);
+    transform:translateY(-3px);
+    box-shadow:0 8px 18px rgba(31,83,197,.45);
+}
+
+.form-register .buttons:active{
+    transform:scale(.98);
+}
+
+/* Campos del formulario */
+.controls{
+    width:100%;
+    background:var(--color-formulario);
+    padding:12px;
+    border-radius:4px;
+    margin-bottom:16px;
+    border:1px solid var(--color-principal);
+    font-size:16px;
+    color:white;
+    transition:.3s;
+}
+
+/* Texto del placeholder */
+.controls::placeholder{
+    color:#cfcfcf;
+}
+
+/* Animación de los campos */
+.controls:hover{
+    border-color:#4d8dff;
+}
+
+.controls:focus{
+    outline:none;
+    border-color:#4d8dff;
+    box-shadow:0 0 10px rgba(31,83,197,.35);
+    transform:scale(1.01);
+}
+
+/* Coloca las fechas en una misma fila */
+.fechas{
+    display:flex;
+    gap:15px;
+}
+
+/* Cada fecha ocupa la mitad del ancho */
+.fechas .grupo{
+    flex:1;
+}
+
+/* Contenedor de términos y condiciones */
+.terminos{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin:15px 0;
+}
+
+/* Checkbox */
+.terminos input{
+    cursor:pointer;
+    accent-color:var(--color-principal);
+    transition:.3s;
+}
+
+/* Animación del checkbox */
+.terminos input:hover{
+    transform:scale(1.15);
+}
+
+/* Muestra las referencias del control range */
+.rango{
+    display:flex;
+    justify-content:space-between;
+    margin-top:-10px;
+    margin-bottom:16px;
+    font-size:14px;
+    color:white;
+}
