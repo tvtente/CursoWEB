@@ -36,6 +36,7 @@ body {
     line-height: 1.6;
     color: var(--color-parrafo);
     min-height: 100vh;
+    padding-bottom: 20px;
 }
 
 a {
@@ -47,27 +48,29 @@ a {
     justify-content: space-between;
     align-items: center;
     gap: 16px;
-    padding: 12px 24px;
-    background: var(--color-principal);
-    box-shadow: 0 6px 20px var(--color-sombra);
+    padding: 14px 28px;
+    background: linear-gradient(135deg, var(--color-principal), #1d3a45);
+    box-shadow: 0 8px 24px var(--color-sombra);
     flex-wrap: wrap;
+    border-bottom: 2px solid rgba(255, 255, 255, .12);
 
     .logo {
-        width: 60px;
-        height: 60px;
+        width: 64px;
+        height: 64px;
         display: flex;
         justify-content: center;
         align-items: center;
         flex-shrink: 0;
-        background: var(--color-secundario);
+        background: linear-gradient(135deg, var(--color-secundario), #36bba6);
         color: var(--color-texto);
         border-radius: var(--radio-logo);
         font-size: 30px;
-        box-shadow: 0 5px 18px var(--color-sombra-logo);
+        box-shadow: 0 8px 22px var(--color-sombra-logo);
+        border: 2px solid rgba(255, 255, 255, .18);
         transition: var(--transicion);
 
         &:hover {
-            transform: scale(1.15) rotate(10deg);
+            transform: scale(1.12) rotate(8deg);
         }
     }
 
@@ -100,10 +103,11 @@ a {
         align-self: flex-start;
 
         .menu-lateral {
-            background: #fff;
-            padding: 20px;
+            background: linear-gradient(135deg, #ffffff, #f4fbff);
+            padding: 22px;
             border-radius: var(--radio);
-            box-shadow: 0 5px 18px var(--color-sombra);
+            border: 1px solid rgba(38, 70, 83, .08);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, .12);
 
             ul {
                 list-style: none;
@@ -125,13 +129,15 @@ a {
                 cursor: pointer;
                 font-weight: bold;
                 transition: var(--transicion);
+                border: 1px solid transparent;
             }
 
             a:hover,
             summary:hover {
-                background: var(--color-secundario);
+                background: linear-gradient(135deg, var(--color-secundario), var(--color-hover));
                 color: var(--color-texto);
                 transform: translateX(5px);
+                box-shadow: 0 6px 12px rgba(42, 157, 143, .25);
             }
 
             details {
@@ -150,12 +156,13 @@ a {
                     a:hover {
                         background: var(--color-fondo);
                         color: var(--color-secundario);
+                        box-shadow: none;
                     }
                 }
             }
 
             details[open] summary {
-                background: var(--color-principal);
+                background: linear-gradient(135deg, var(--color-principal), #325f6e);
                 color: var(--color-texto);
             }
         }
@@ -167,16 +174,20 @@ a {
 
         .tema {
             margin-bottom: 40px;
-            padding: 30px;
-            background: #fff;
+            padding: 34px 32px;
+            background: linear-gradient(135deg, #ffffff, #f7fcff);
             border-radius: var(--radio);
-            box-shadow: 0 5px 18px var(--color-sombra);
+            border: 1px solid rgba(38, 70, 83, .08);
+            box-shadow: 0 10px 24px rgba(0, 0, 0, .12);
 
             h2 {
                 margin-bottom: 8px;
                 color: var(--color-principal);
                 border-left: 10px solid var(--color-secundario);
                 padding-left: 15px;
+                letter-spacing: .04em;
+                text-transform: uppercase;
+                font-size: 1.7rem;
             }
 
             h3 {
@@ -185,6 +196,7 @@ a {
                 color: var(--color-principal);
                 border-bottom: 3px solid var(--color-secundario);
                 font-size: 1.6rem;
+                letter-spacing: .02em;
             }
 
             h4 {
@@ -265,14 +277,17 @@ a {
                 gap: 10px;
                 margin: 15px 0 30px;
                 padding: 15px;
-                background: var(--color-fondo);
+                background: linear-gradient(135deg, var(--color-fondo), #f8fdff);
                 border-left: 5px solid var(--color-secundario);
                 border-radius: var(--radio);
+                border: 1px solid rgba(38, 70, 83, .08);
+                box-shadow: inset 0 1px 0 rgba(255, 255, 255, .8);
 
                 .boton {
                     background: #fff;
                     color: var(--color-secundario);
                     font-weight: bold;
+                    border: 1px solid rgba(42, 157, 143, .2);
                 }
             }
 
@@ -280,8 +295,9 @@ a {
                 margin-top: 40px;
                 padding: 25px;
                 border-radius: var(--radio);
-                background: var(--color-fondo);
+                background: linear-gradient(135deg, var(--color-fondo), #f8fbff);
                 border-left: 6px solid var(--color-secundario);
+                box-shadow: inset 0 1px 0 rgba(255, 255, 255, .7);
 
                 aside {
                     position: relative;
@@ -294,7 +310,7 @@ a {
                     border: 1px solid var(--color-nota-borde);
                     border-left: 8px solid var(--color-secundario);
                     border-radius: 8px;
-                    box-shadow: 0 10px 22px rgba(0, 0, 0, .18), inset 0 1px 0 rgba(255, 255, 255, .7);
+                    box-shadow: 0 14px 28px rgba(0, 0, 0, .16), inset 0 1px 0 rgba(255, 255, 255, .7);
                     transform: rotate(-1deg);
                     transition: var(--transicion);
                     overflow: visible;
@@ -421,9 +437,10 @@ a {
     gap: 15px;
     padding: 20px 40px;
     margin-top: 50px;
-    background: var(--color-principal);
+    background: linear-gradient(135deg, var(--color-principal), #1d3a45);
     color: var(--color-texto);
     box-shadow: 0 -6px 20px var(--color-sombra);
+    border-top: 1px solid rgba(255, 255, 255, .12);
 
     .top {
         display: flex;
@@ -445,16 +462,17 @@ a {
     color: var(--color-texto);
     text-decoration: none;
     padding: 10px 20px;
-    background: var(--color-boton);
+    background: linear-gradient(135deg, rgba(255, 255, 255, .18), rgba(255, 255, 255, .08));
     border: 1px solid var(--color-borde);
     border-radius: var(--radio);
     box-shadow: 0 2px 6px var(--color-sombra);
     transition: var(--transicion);
+    backdrop-filter: blur(4px);
 
     &:hover {
-        background: var(--color-secundario);
+        background: linear-gradient(135deg, var(--color-hover), var(--color-secundario));
         transform: translateY(-4px);
-        box-shadow: 0 5px 12px var(--color-sombra);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, .2);
     }
 }
 
