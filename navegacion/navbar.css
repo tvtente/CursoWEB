@@ -6,6 +6,9 @@
     --color-fondo-oscuro:#ddebf0;
     --color-texto:#fff;
     --color-parrafo:#444;
+    --color-nota: #fff7c8;
+    --color-nota-borde:#e8d77a;
+    --color-nota-esquina:#efe4a5;
     --color-sombra:rgba(0,0,0,.25);
     --color-sombra-logo:rgba(42,157,143,.40);
     --color-boton:rgba(255,255,255,.10);
@@ -65,22 +68,99 @@ body{
         margin: 20px 0;
     }
 }
-
-main{
+.layout{
+    display:flex;
+    gap:30px;
     width:min(var(--ancho-contenido),95%);
     margin:40px auto;
+    align-items:flex-start;
+}
+
+.layout > aside{
+    width:280px;
+    flex-shrink:0;
+    position:sticky;
+    top:20px;
+    align-self:flex-start;
+
+    & .menu-lateral{
+        background:#fff;
+        padding:20px;
+        border-radius:var(--radio);
+        box-shadow:0 5px 18px var(--color-sombra);
+
+        & ul{
+            list-style:none;
+        }
+
+        & li{
+            margin-bottom:10px;
+        }
+
+        & a,
+        & summary{
+            display:block;
+            padding:10px 15px;
+            border-radius:var(--radio);
+            color:var(--color-principal);
+            text-decoration:none;
+            cursor:pointer;
+            font-weight:bold;
+            transition:var(--transicion);
+        }
+
+        & a:hover,
+        & summary:hover{
+            background:var(--color-secundario);
+            color:var(--color-texto);
+            transform:translateX(5px);
+        }
+
+        & details{
+            margin-bottom:10px;
+
+            & ul{
+                margin:10px 0 10px 15px;
+                padding-left:10px;
+                border-left:3px solid var(--color-secundario);
+
+                & a{
+                    font-size:.9rem;
+                    font-weight:normal;
+                }
+
+                & a:hover{
+                    background:var(--color-fondo);
+                    color:var(--color-secundario);
+                }
+            }
+        }
+
+        & details[open] summary{
+            background:var(--color-principal);
+            color:var(--color-texto);
+        }
+    }
+}
+
+.layout > main{
+    flex:1;
+    min-width:0;
+
     & .tema{
-        margin-bottom:60px;
+        margin-bottom:40px;
         padding:30px;
         background:#fff;
         border-radius:var(--radio);
         box-shadow:0 5px 18px var(--color-sombra);
+
         & h2{
             margin-bottom:8px;
             color:var(--color-principal);
-            border-left:8px solid var(--color-secundario);
+            border-left:50px solid var(--color-secundario);
             padding-left:15px;
         }
+
         & h3{
             margin-bottom:20px;
             padding-bottom:10px;
@@ -94,21 +174,26 @@ main{
             color:var(--color-secundario);
             font-size:1.2rem;
         }
+
         & p{
             margin:15px 0;
             line-height:1.7;
             color:var(--color-parrafo);
         }
+
         & ul,
         & ol{
             margin:15px 0 15px 30px;
             line-height:1.8;
+
             & li{
                 margin-bottom:8px;
             }
         }
+
         & .tabla{
             overflow-x:auto;
+
             & table{
                 width:90%;
                 margin:20px auto;
@@ -156,7 +241,6 @@ main{
             }
         }
 
-
         & .subnav{
             display:flex;
             flex-wrap:wrap;
@@ -166,41 +250,119 @@ main{
             background:var(--color-fondo);
             border-left:5px solid var(--color-secundario);
             border-radius:var(--radio);
-            & .boton{
-                    background:#fff;
-                    color:var(--color-secundario);
-                    font-weight: bold;
-                }
-            }
-        & article{
 
+            & .boton{
+                background:#fff;
+                color:var(--color-secundario);
+                font-weight:bold;
+            }
+        }
+
+        & article{
             margin-top:40px;
             padding:25px;
             border-radius:var(--radio);
             background:var(--color-fondo);
             border-left:6px solid var(--color-secundario);
+
             & aside{
-                margin:30px 0;
-                padding:20px 25px;
-                border-radius:var(--radio);
-                box-shadow:0 4px 12px var(--color-sombra);
                 position:relative;
-                overflow:hidden;
+                margin:40px auto;
+                padding:35px 28px 25px;
+                width:fit-content;
+                max-width:550px;
+
+                background:
+                    linear-gradient(rgba(255,255,255,.10),rgba(255,255,255,.03)),
+                    var(--color-nota);
+
+                color:var(--color-parrafo);
+
+                border:1px solid var(--color-nota-borde);
+                border-left:8px solid var(--color-secundario);
+                border-radius:8px;
+
+                box-shadow:
+                    0 10px 22px rgba(0,0,0,.18),
+                    inset 0 1px 0 rgba(255,255,255,.7);
+
+                transform:rotate(-1deg);
+                transition:var(--transicion);
+
+                overflow:visible;
+
+                &:hover{
+                    transform:rotate(.5deg) translateY(-3px);
+                }
 
                 & h4{
-                    margin-top:0;
-                    margin-bottom:15px;
+                    margin:0 0 15px;
+                    color:var(--color-principal);
                     font-size:1.2rem;
                 }
 
                 & p{
+                    margin:12px 0;
+                    line-height:1.7;
                     color:var(--color-parrafo);
                 }
 
                 & ul{
-                    margin-left:25px;
+                    margin:15px 0 0 25px;
+                }
+
+                & .esquina{
+                    position:absolute;
+                    top:0;
+                    right:0;
+                    width:32px;
+                    height:32px;
+
+                    clip-path:polygon(100% 0,0 0,100% 100%); /*dibuja un triángulo*/
+
+                    background:var(--color-nota-esquina);
+
+                    box-shadow:-2px 2px 4px rgba(0,0,0,.12);
+                }
+
+                &::before{
+                    content:"";
+                    position:absolute;
+                    top:-12px;
+                    left:50%;
+                    transform:translateX(-50%);
+
+                    width:180px;
+                    height:24px;
+
+                    background:
+                        radial-gradient(circle,var(--color-fondo) 6px,transparent 7px)
+                        0 50%/30px 24px repeat-x;
+                }
+
+                &::after{
+                    content:"";
+                    position:absolute;
+
+                    top:-14px;
+                    right:30px;
+
+                    width:90px;
+                    height:28px;
+
+                    background:rgba(255,255,255,.65);
+
+                    border-left:1px solid rgba(255,255,255,.75);
+                    border-right:1px solid rgba(255,255,255,.75);
+
+                    box-shadow:0 1px 3px rgba(0,0,0,.12);
+
+                    transform:rotate(12deg);
+
+                    backdrop-filter:blur(2px);
                 }
             }
+
             & .explicacio h4::before{content:"📖 Explicació";}
             & .arrel h4::before{content:"🔎 Arrel i terminació";}
             & .tabla h4::before{content:"📋 Taula resum";}
